@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/academia?useTimeZone=true&serverTimeZone=UTC&useLegacyDate
+    username: postgres
+    password: davidson
+  jpa:
+    show-sql: true
+
+

@@ -1,8 +1,10 @@
 package me.dio.academia.digital.entity.form;
 
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.br.CPF;
 
 import java.time.LocalDate;
 
@@ -11,11 +13,19 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class AlunoForm {
 
+  @NotEmpty(message = "Preencha o campo corretamente")
+  @Size(min = 3, max = 50, message = "O campo precisa ter entre 3 e 50 caracteres.")
   private String nome;
 
+  @NotEmpty(message = "Preencha o campo corretamente.")
+  @CPF(message = "'${validatedValue}' é inválido!")
   private String cpf;
 
+  @NotEmpty(message = "Preencha o campo corretamente.")
+  @Size(min = 3, max = 50, message = "'${validatedValue}' precisar ter {min} e {max} caracteres.")
   private String bairro;
 
+  @NotNull(message = "Preencha o campo corretamente.")
+  @Past(message = "Data '${validatedValue} é inválida!'")
   private LocalDate dataDeNascimento;
 }

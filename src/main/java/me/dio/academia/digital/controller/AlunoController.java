@@ -1,11 +1,13 @@
 package me.dio.academia.digital.controller;
 
+import jakarta.validation.Valid;
 import me.dio.academia.digital.entity.Aluno;
 import me.dio.academia.digital.entity.AvaliacaoFisica;
 import me.dio.academia.digital.entity.form.AlunoForm;
 import me.dio.academia.digital.service.IAlunoService;
 import me.dio.academia.digital.service.IAvaliacaoFisicaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,7 +26,7 @@ public class AlunoController {
   }
 
   @PostMapping
-  public Aluno create(@RequestBody AlunoForm alunoForm) {
+  public Aluno create(@Valid @RequestBody AlunoForm alunoForm) {
     return alunoService.create(alunoForm);
   }
 

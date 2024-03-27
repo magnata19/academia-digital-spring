@@ -19,7 +19,7 @@ public class Matricula {
   private Long id;
 
   @OneToOne(cascade = CascadeType.ALL)
-  @JoinColumn(name = "aluno_id")
+  @JoinColumn(name = "id_aluno")
   private Aluno aluno;
 
   private LocalDateTime dataDaMatricula = LocalDateTime.now();

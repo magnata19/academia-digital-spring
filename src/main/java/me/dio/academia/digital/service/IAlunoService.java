@@ -5,6 +5,7 @@ import me.dio.academia.digital.entity.AvaliacaoFisica;
 import me.dio.academia.digital.entity.form.AlunoForm;
 import me.dio.academia.digital.entity.form.AlunoUpdateForm;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface IAlunoService {
@@ -26,7 +27,7 @@ public interface IAlunoService {
    * Retorna todos os Alunos que estão no banco de dados.
    * @return - Uma lista os Alunos que estão salvas no DB.
    */
-  List<Aluno> getAll();
+  List<Aluno> getAll(String dataDeNascimento);
 
   /**
    * Atualiza o Aluno.
